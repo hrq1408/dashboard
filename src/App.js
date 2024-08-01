@@ -1,11 +1,17 @@
+import  React from 'react';
+import Menu from './components/Menu/Menu';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import './styles/styles.scss';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to my React App with SASS!</h1>
-    </div>
+    <Router>
+      <div className="App">
+        <Menu />
+
+      </div>
+    </Router>
   );
 }
 
