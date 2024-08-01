@@ -1,0 +1,16 @@
+// src/styles/styles.scss
+
+$primary-color: #4caf50;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $primary-color;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
