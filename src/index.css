@@ -1,4 +1,82 @@
-body {
-  margin: 0;
+/* Grid */
+.grid {
+  display: grid;  
+}
 
+.grid-template-2 {
+  grid-template:
+    "sidenav sidenav logo logo" 50px
+    "sidenav sidenav content content" 150px
+    "sidenav sidenav advert advert" 150px
+    "sidenav sidenav project project" 350px
+    "sidenav sidenav footer footer" 100px
+    / 100px 1fr 50px;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.content {
+  grid-area: content;
+  display: grid; /* Define the content area as a grid */
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  gap: 10px; /* Space between columns */
+}
+
+.sidenav {
+  grid-area: sidenav;
+}
+
+.advert {
+  grid-area: advert;
+  display: grid; /* Define the advert area as a grid */
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 10px; /* Space between columns */
+}
+
+.project {
+  grid-area: project;
+  display: grid; /* Define the project area as a grid */
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 10px; /* Space between columns */
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* Grid Item */
+.item {
+  margin: 5px;
+  background: tomato;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .grid-template-2 {
+    grid-template:
+      "logo" 50px
+      "content" auto
+      "advert" auto
+      "project" auto
+      "footer" 100px
+      / 1fr;
+  }
+
+  .sidenav {
+    display: none; /* Hide sidenav on very small screens */
+  }
+
+  .content,
+  .advert,
+  .project {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
 }
