@@ -5,12 +5,12 @@
 
 .grid-template-2 {
   grid-template:
-    "sidenav sidenav logo logo" 50px
-    "sidenav sidenav content content" 150px
-    "sidenav sidenav advert advert" 150px
-    "sidenav sidenav project project" 350px
-    "sidenav sidenav footer footer" 100px
-    / 100px 1fr 50px;
+    "sidenav logo logo" 50px
+    "sidenav content content" 150px
+    "sidenav advert advert" 150px
+    "sidenav project project" 350px
+    "sidenav footer footer" 10px
+ 
 }
 
 .logo {
@@ -53,9 +53,7 @@
 /* Grid Item */
 .item {
   margin: 5px;
-  background: tomato;
   text-align: center;
-  font-size: 1.5em;
 }
 
 /* Media Queries */
@@ -68,10 +66,6 @@
       "project" auto
       "footer" 100px
       / 1fr;
-  }
-
-  .sidenav {
-    display: none; /* Hide sidenav on very small screens */
   }
 
   .content,
