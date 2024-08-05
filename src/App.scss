@@ -1,0 +1,106 @@
+/* Variables */
+$background-white: #fff;
+$background-blue: #3a11f0;
+$background-grey: #f0f0f0;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$border-radius: 10px;
+$gap: 10px;
+$margin: 5px;
+
+/* Mixins */
+@mixin box-style($bg-color, $padding) {
+  box-shadow: $box-shadow;
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  padding: $padding;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+}
+
+.grid-template-2 {
+  grid-template:
+    "sidenav logo logo" 50px
+    "sidenav content content" 150px
+    "sidenav advert advert" 150px
+    "sidenav project project" 450px
+    "sidenav footer footer" 100px
+    / 290px auto auto;
+}
+
+/* Grid Areas */
+.logo {
+  grid-area: logo;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $gap;
+}
+
+.sidenav {
+  grid-area: sidenav;
+}
+
+.advert {
+  grid-area: advert;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $gap;
+}
+
+.project {
+  grid-area: project;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $gap;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* Grid Items */
+.item {
+  margin: $margin;
+  text-align: center;
+
+  &.cont {
+    @include box-style($background-white, 30px);
+  }
+
+  &.adve {
+    @include box-style($background-blue, 60px);
+  }
+
+  &.proj {
+    @include box-style($background-grey, 100px);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .grid-template-2 {
+    grid-template:
+      "logo" 50px
+      "content" auto
+      "advert" auto
+      "project" auto
+      "footer" 100px
+      / 1fr;
+  }
+
+  .content,
+  .advert,
+  .project {
+    grid-template-columns: 1fr;
+  }
+}
